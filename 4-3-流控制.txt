@@ -1,0 +1,8 @@
+1.条件分支 
+if,else,elseif
+if expression
+    statements
+end
+//if以end作为结束
+
+if,elseif,else的语法类似

@@ -1,0 +1,5 @@
+1.figure  //该命令可以用来新建一个绘图窗口，创建时会自动标号
+figure(n)  //根据n来选择把图形绘制在哪个窗口
+clf reset  //将figure重置，因为figure有很多属性，例如背景颜色等。
+
+2.figure属性设置

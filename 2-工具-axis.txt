@@ -1,0 +1,5 @@
+1.axis
+axis equal //将两坐标设为相等。
+axis auto //将坐标轴设为自动返回缺省值。
+axis([xmin xmax ymin ymax]) //用来标注输出的图线的最大值最小值。
+其中，[xmin xmax ymin ymax]用来表示需要显示坐标的范围，xmin、xmax、ymin、ymax分别表示X、Y轴坐标最小和最大值。操作实例如下：

@@ -1,0 +1,69 @@
+1.matlab提供了大量的函数
+max函数：A=[1,3,5]  b=max(A),b=5;
+max可以接收数组，B=[2,4,1,],C=max(A,B);c=[2,4,5];
+
+2.2D图像绘制
+x=0:pi/100:2*pi;代表从0到2*pi，以pi/100为步长进行绘制。
+y=sin(x);
+plot(x,y);
+
+//plot对应的一组set
+xlabel('x')
+ylabel('sin(x)')
+title('Plot of the Sine Function')
+
+hold on:每次进入figure window窗口时都会把之前的函数图像清除，如果不想被清除，用hold on
+legend('sin','cos');会在窗口右上角对各个函数曲线做标注，方便分辨各个函数曲线
+
+含多个输入参数的plot函数，这个时候通常要使用legend添加图例
+plot函数可以包含若干组向量对，每一组可以绘制出一条曲线。含多个输入参数的plot函数调用格式为：plot(x1，y1，x2，y2，…，xn，yn)
+
+如下列命令可以在同一坐标中画出3条曲线。
+>> x=linspace(0,2*pi,100);
+>> plot(x,sin(x),x,2*sin(x),x,3*sin(x))
+
+当输入参数有矩阵形式时，配对的x,y按对应的列元素为横坐标和纵坐标绘制曲线，曲线条数等于矩阵的列数。
+>> x=linspace(0,2*pi,100);
+>> y1=sin(x);
+>> y2=2*sin(x);
+>> y3=3*sin(x);
+
+>> x=[x;x;x]';
+>> y=[y1;y2;y3]';
+>> plot(x,y,x,cos(x))
+
+使用plot函数可以直接将矩阵数据绘制出来
+A=pascal(5); plot(A);
+
+
+3.函数绘图选项
+
+Matlab提供了一些绘图选项，用于确定所绘曲线的线型、颜色和数据点标记符号。这些选项如表所示：
+线型
+- 实线
+: 虚线
+-.点划线
+--双划线
+
+颜色
+r,g,b,c青色，m品红，y黄色，k黑色，w白色
+标记符号
+ .点
+*星号
++加号
+o圆圈；x叉号；s方块；d菱形；p五角星；h六角星;^向上三角符号；<向左三角符号；>向右三角符号
+
+plot(x,cos(x),'rp-.');  //一般是颜色在前，标记符号在中，线型在后。
+
+
+4.plotyy
+线型设置：
+[ax,h1,h2]=plotyy(t,sin(t),t,cos(t));
+set(h1,'linestyle','-','marker','o','color','r');
+set(h2,'linestyle',':','marker','x','color','b');
+加注图例：
+hhf=line(x,2*sin(x)); //line函数类似plot函数，但是使用line函数画出的图形会自动保留不会被清除。
+set(hhf,'color','r');
+legend([h1,h2,hhf],'sinx','cosx','2sin(x)');
+
+
